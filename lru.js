@@ -85,7 +85,7 @@ function lruFunc(url) {
     cache.moveNodeFromListToHead(obj[url]);
   } else { // if url is not in cache
     obj[url] = node;
-    if (cache.length < 3) { // check if there is free space in cache
+    if (cache.length < 3) { // check if there is free space in cache - you can change cache size here
       cache.addNewNodeToHead(node);
     } else { // if no free space in cache
       cache.addNewNodeToHead(node);
