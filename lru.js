@@ -79,13 +79,14 @@ const cache = new DoublyLinkedList(); // acting as cache
 const obj = {}; // acting as hash map
 
 function lruFunc(url) {
+  cosnt cacheSize = 3;
 
   const node = new Node(url);
   if (obj[url]) { // check if the url is in the map
     cache.moveNodeFromListToHead(obj[url]);
   } else { // if url is not in cache
     obj[url] = node;
-    if (cache.length < 3) { // check if there is free space in cache - you can change cache size here
+    if (cache.length < cacheSize) { // check if there is free space in cache - you can change cache size here
       cache.addNewNodeToHead(node);
     } else { // if no free space in cache
       cache.addNewNodeToHead(node);
