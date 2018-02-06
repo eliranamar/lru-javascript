@@ -79,7 +79,7 @@ const cache = new DoublyLinkedList(); // acting as cache
 const obj = {}; // acting as hash map
 
 function lruFunc(url) {
-  cosnt cacheSize = 3;
+  const cacheSize = 3;
 
   const node = new Node(url);
   if (obj[url]) { // check if the url is in the map
